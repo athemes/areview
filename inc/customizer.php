@@ -247,7 +247,7 @@ function areview_customize_register( $wp_customize ) {
         'carousel_display',
         array(
             'type' => 'checkbox',
-            'label' => __('Check this box to display the carousel.', 'areview'),
+            'label' => __('Check this box to display the carousel (posts should have Featured Images).', 'areview'),
             'section' => 'areview_carousel',
         )
     );
