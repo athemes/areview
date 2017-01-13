@@ -1178,7 +1178,11 @@ Responsive
 	}
 	.owl-carousel {
 		max-width: 750px !important;
-	}		
+	}
+	.single .button-container {
+		position: relative;
+		padding: 20px;
+	}
 }
 @media only screen and (max-width: 767px) {
 	.social-navigation {
