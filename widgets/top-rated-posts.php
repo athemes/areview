@@ -93,11 +93,12 @@ class aReview_Top_Rated_Posts extends WP_Widget {
 		//Adapted from YASR top ten shortcode
 		    global $wpdb;
 
-		    $query_result = $wpdb->get_results("SELECT v.overall_rating, v.post_id
-		                                        FROM " . YASR_VOTES_TABLE . " AS v, $wpdb->posts AS p
-		                                        WHERE  v.post_id = p.ID
-		                                        AND p.post_status = 'publish'
-		                                        ORDER BY v.overall_rating DESC, v.id ASC LIMIT $number");
+		    $query_result = $wpdb->get_results("SELECT pm.meta_value AS overall_rating, pm.post_id AS post_id
+                                                        FROM $wpdb->postmeta AS pm, $wpdb->posts AS p
+                                                        WHERE  pm.post_id = p.ID
+                                                        AND p.post_status = 'publish'
+                                                        AND pm.meta_key = 'yasr_overall_rating'
+                                                        ORDER BY pm.meta_value DESC, pm.post_id ASC LIMIT $number");
 
 		    if ($query_result) {
 
