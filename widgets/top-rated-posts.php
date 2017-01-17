@@ -3,9 +3,9 @@
 class aReview_Top_Rated_Posts extends WP_Widget {
 
 // constructor
-    function areview_top_rated_posts() {
+    function __construct() {
 		$widget_ops = array('classname' => 'areview_top_rated_posts_widget', 'description' => __( 'Display your top rated posts/products', 'areview') );
-        parent::WP_Widget(false, $name = __('aReview: Top rated', 'areview'), $widget_ops);
+        parent::__construct(false, $name = __('aReview: Top rated', 'areview'), $widget_ops);
 		$this->alt_option_name = 'areview_top_rated_posts_widget';
 		
 		add_action( 'save_post', array($this, 'flush_widget_cache') );
