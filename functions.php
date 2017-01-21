@@ -68,6 +68,8 @@ function areview_setup() {
 		'default-color' => '222e38',
 		'default-image' => get_template_directory_uri() . '/pattern.png',
 	) ) );
+	
+	add_theme_support( 'title-tag' );
 }
 endif; // areview_setup
 add_action( 'after_setup_theme', 'areview_setup' );
